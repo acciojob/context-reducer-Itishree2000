@@ -19,13 +19,12 @@ import React ,{ createContext,useContext,useState } from "react";
      const signOut=()=>{
         setCurrentUser({name:"" , isAuthenticated:false})
      }
-     const addItem=()=>{
-        if(inputValue.trim()!='')
-        {
-            setInputValue([...list,inputValue])
-            setInputValue("");
-        }
-     }
+     const addItem = () => {
+      if (inputValue.trim() !== '') {
+        setList([...list, inputValue]);
+        setInputValue("");  // Clear the input after adding an item
+      }
+    };
      const removeItem=(itemName)=>{
         const updatedList=list.filter((item)=>item!==itemName)
         setList(updatedList);

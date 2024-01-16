@@ -6,7 +6,7 @@ import List from './List';
 function App() {
   return (
     <ContextProvider>
-      <div>
+      <div className="app-container">
         <Header />
         <List />
       </div>
@@ -15,4 +15,5 @@ function App() {
 }
 
 export default App;
+
 
