@@ -8,7 +8,7 @@ import React ,{ createContext,useContext,useState } from "react";
   }
 
   export const ContextProvider=({children})=>{
-     const[currentUser,setCurrentUser]=useState({name:'',isAuthenticated:false});
+     const[currentUser,setCurrentUser]=useState({name:"",isAuthenticated:false});
      const[list,setList]=useState([])
      const[inputValue,setInputValue]=useState("")
      
@@ -17,16 +17,16 @@ import React ,{ createContext,useContext,useState } from "react";
        setCurrentUser({name:userName , isAuthenticated:true})
      }
      const signOut=()=>{
-        setCurrentUser({name:'' , isAuthenticated:false})
+        setCurrentUser({name:"" , isAuthenticated:false})
      }
      const addItem=()=>{
         if(inputValue.trim()!='')
         {
             setInputValue([...list,inputValue])
-            setInputValue('');
+            setInputValue("");
         }
      }
-     const removeItem=()=>{
+     const removeItem=(itemName)=>{
         const updatedList=list.filter((item)=>item!==itemName)
         setList(updatedList);
      }
